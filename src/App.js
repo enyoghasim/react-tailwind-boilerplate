@@ -1,8 +1,21 @@
-import logo from "./logo.svg";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 
-function App() {
-  return <div className="App bg-red-50 text-[red]">hello</div>;
-}
+// Path: src/App.scss
+
+// routes imports
+import Home from "./pages/home";
+
+// 404 page
+import NotFound from "./pages/404";
+
+const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </BrowserRouter>
+);
 
 export default App;
